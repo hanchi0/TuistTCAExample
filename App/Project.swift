@@ -1,19 +1,18 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
-let project = Project(
+let project = Project.makeProject(
     name: "TuistTCAExample",
     targets: [
         .target(
             name: "TuistTCAExample",
             destinations: .iOS,
             product: .app,
-            bundleId: "io.tuist.TuistTCAExample",
+            bundleId: ProjectEnvironment.bundleID,
+            deploymentTargets: ProjectEnvironment.deploymentTargets,
             infoPlist: .extendingDefault(
                 with: [
-                    "UILaunchScreen": [
-                        "UIColorName": "",
-                        "UIImageName": "",
-                    ],
+                    "UILaunchStoryboardName": "Launch Screen",
                 ]
             ),
             sources: ["Sources/**"],
@@ -24,7 +23,7 @@ let project = Project(
             name: "TuistTCAExampleTests",
             destinations: .iOS,
             product: .unitTests,
-            bundleId: "io.tuist.TuistTCAExampleTests",
+            bundleId: ProjectEnvironment.bundleID + "Tests",
             infoPlist: .default,
             sources: ["Tests/**"],
             resources: [],
