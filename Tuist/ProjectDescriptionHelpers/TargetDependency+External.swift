@@ -9,5 +9,6 @@ import ProjectDescription
 
 extension TargetDependency {
     public enum External {
+        public static let ComposableArchitecture = TargetDependency.external(name: "ComposableArchitecture")
     }
 }
