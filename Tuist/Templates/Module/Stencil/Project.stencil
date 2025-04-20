@@ -1,0 +1,13 @@
+import ProjectDescription
+import ProjectDescriptionHelpers
+
+let project = Project.makeProject(
+    name: {{ layer }}.{{ name }}.rawValue,
+    targets: [
+        .makeInterface({{ layer }}.{{ name }}),
+        .makeFeature({{ layer }}.{{ name }}),
+        .makeTesting({{ layer }}.{{ name }}),
+        .makeTests({{ layer }}.{{ name }}),
+        .makeExampleApp({{ layer }}.{{ name }})
+    ]
+)
