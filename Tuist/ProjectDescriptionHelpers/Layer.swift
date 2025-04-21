@@ -23,6 +23,7 @@ public enum Feature: String, Layer {
     
     case Splash
     case Sign
+    case Home
 }
 
 public enum Domain: String, Layer {
