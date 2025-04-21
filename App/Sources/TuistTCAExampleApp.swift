@@ -4,7 +4,12 @@ import SwiftUI
 struct TuistTCAExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView(
+                store: .init(
+                    initialState: AppReducer.State(),
+                    reducer: { AppReducer() }
+                )
+            )
         }
     }
 }

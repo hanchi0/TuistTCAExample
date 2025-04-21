@@ -17,7 +17,12 @@ let project = Project.makeProject(
             ),
             sources: ["Sources/**"],
             resources: ["Resources/**"],
-            dependencies: []
+            dependencies: [
+                .feature(Feature.Splash),
+                .feature(Feature.Sign),
+                .feature(Feature.Home),
+                .External.ComposableArchitecture
+            ]
         ),
         .target(
             name: "TuistTCAExampleTests",
