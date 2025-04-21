@@ -22,6 +22,7 @@ public enum Feature: String, Layer {
     public var name: String { String(describing: Self.self) }
     
     case Splash
+    case Sign
 }
 
 public enum Domain: String, Layer {
